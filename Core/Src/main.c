@@ -208,20 +208,16 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	       if (adc_buffer[0] < 1450)
 	      {
-	        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-	        HAL_Delay(200);// Encender LED
+	        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);// Encender LED
 	      }
 	      else
 	      {
 	        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET); // Apagar LED
 	      }
 	  	  Trigger_HCSR04();
-	  	  HAL_Delay(500);
 	      Trigger_HCSR04Salida();
-	  	  HAL_Delay(500);
 	  	  CalcularDistancia();
 	  	  CalcularDistanciaSalida();
-	  	  HAL_Delay(100);
 	  	  if (distancia < 25) {
 	  	          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
 	  	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
@@ -235,7 +231,6 @@ int main(void)
 	  	          HAL_GPIO_WritePin(GPIOD, GPIO_PIN_3, GPIO_PIN_SET);
 	  	          HAL_GPIO_WritePin(GPIOD, GPIO_PIN_4, GPIO_PIN_SET);
 	  	          mover_motor(0);
-	  	          HAL_Delay(100);
 	  	          if (distanciaSalida < 25) {
 	  		          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_SET);
 	  		          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
@@ -246,7 +241,6 @@ int main(void)
 	  		      } else {
 	  		          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_RESET);
 	  		          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-
 	  		          mover_motor(0);
 	  		      }
 	  	      }
