@@ -22,3 +22,8 @@ Mediciones optimizadas:
     -Utiliza DMA para leer datos del ADC sin interrumpir el flujo principal del programa.
     
     -Gestiona los sensores y calcula las distancias sin bloqueos, aprovechando interrupciones.
+
+
+
+https://github.com/user-attachments/assets/16a0389c-4b61-4a0d-a7a3-1a9597380bc7
+
